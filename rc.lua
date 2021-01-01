@@ -84,9 +84,10 @@ local themes = {
     "rainbow",         -- 8
     "steamburn",       -- 9
     "vertex",          -- 10
+    "aholmes",         -- 11 (My custom theme)
 }
 
-local chosen_theme = themes[7]
+local chosen_theme = themes[11]
 local modkey       = "Mod4"
 local altkey       = "Mod1"
 local terminal     = "alacritty"
@@ -98,7 +99,7 @@ local browser      = os.getenv("BROWSER") or "firefox"
 local scrlocker    = "slock"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "1", "2", "3", "4", "5" }
+awful.util.tagnames = { "WEB", "CODE", "GAME", "MEDIA", "MISC" }
 awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
