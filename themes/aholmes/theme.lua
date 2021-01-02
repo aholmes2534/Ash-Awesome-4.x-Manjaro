@@ -1,6 +1,6 @@
 --[[
 
-     Powerarrow Dark Awesome WM theme
+     AHolmes' custom theme based on the Powerarrow Dark Awesome WM theme
      github.com/lcpz
 
 --]]
@@ -37,6 +37,7 @@ theme.menu_width                                = dpi(250)
 theme.menu_submenu_icon                         = theme.dir .. "/icons/submenu.png"
 theme.taglist_squares_sel                       = theme.dir .. "/icons/square_sel.png"
 theme.taglist_squares_unsel                     = theme.dir .. "/icons/square_unsel.png"
+theme.taglist_font				= "Xirod 12"
 theme.layout_tile                               = theme.dir .. "/icons/tile.png"
 theme.layout_tileleft                           = theme.dir .. "/icons/tileleft.png"
 theme.layout_tilebottom                         = theme.dir .. "/icons/tilebottom.png"
@@ -302,7 +303,7 @@ function theme.at_screen_connect(s)
     s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
 
     -- Create the wibox
-    s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(18), bg = theme.bg_normal, fg = theme.fg_normal })
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(20), bg = theme.bg_normal, fg = theme.fg_normal })
 
     -- Add widgets to the wibox
     s.mywibox:setup {
@@ -327,7 +328,7 @@ function theme.at_screen_connect(s)
             volicon,
             theme.volume.widget,
             arrl_ld,
-            wibox.container.background(mailicon, theme.bg_focus),
+           -- wibox.container.background(mailicon, theme.bg_focus),
             --wibox.container.background(theme.mail.widget, theme.bg_focus),
             arrl_dl,
             memicon,
