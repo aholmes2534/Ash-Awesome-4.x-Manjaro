@@ -16,7 +16,7 @@ local wibox         = require("wibox")
 local beautiful     = require("beautiful")
 local naughty       = require("naughty")
 local lain          = require("lain")
---local menubar       = require("menubar")
+local menubar       = require("menubar")
 local freedesktop   = require("freedesktop")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
                       require("awful.hotkeys_popup.keys")
@@ -85,6 +85,8 @@ local themes = {
     "steamburn",       -- 9
     "vertex",          -- 10
     "aholmes",         -- 11 (My custom theme)
+    
+
 }
 
 local chosen_theme = themes[11]
@@ -524,11 +526,11 @@ globalkeys = my_table.join(
     awful.key({ modkey }, "a", function () awful.spawn(gui_editor) end,
               {description = "run gui editor", group = "launcher"}),
 
-    -- Default
-    --[[ Menubar
+    -- Default 
+   
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
-    --]]
+              {description = "show the menubar", group = "launcher"}),
+    
     --[[ dmenu
     awful.key({ modkey }, "x", function ()
             os.execute(string.format("dmenu_run -i -fn 'Monospace' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
@@ -545,9 +547,9 @@ globalkeys = my_table.join(
         end,
         {description = "show rofi", group = "launcher"}),
     --]]
-    -- Prompt
-    awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
-              {description = "run prompt", group = "launcher"}),
+    -- Rofi run prompt
+    awful.key({ modkey }, "r", function () awful.util.spawn("rofi -show run") end,
+              {description = "run prompt (Rofi)", group = "launcher"}),
 
     awful.key({ modkey }, "x",
               function ()
@@ -776,3 +778,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- possible workaround for tag preservation when switching back to default screen:
 -- https://github.com/lcpz/awesome-copycats/issues/251
 -- }}}
+
+-- Gaps
+beautiful.useless_gap=5

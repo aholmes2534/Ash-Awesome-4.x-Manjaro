@@ -328,7 +328,7 @@ function theme.at_screen_connect(s)
             volicon,
             theme.volume.widget,
             arrl_ld,
-           -- wibox.container.background(mailicon, theme.bg_focus),
+            wibox.container.background(mailicon, theme.bg_focus),
             --wibox.container.background(theme.mail.widget, theme.bg_focus),
             arrl_dl,
             memicon,
